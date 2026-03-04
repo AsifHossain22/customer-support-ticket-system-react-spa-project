@@ -1,0 +1,110 @@
+[
+  {
+    "id": "TIC_1001",
+    "title": "Login Authentication Error",
+    "description": "User reports receiving a 500 error when attempting to log in via OAuth.",
+    "customer": "TechNova Solutions",
+    "priority": "Critical",
+    "status": "Open",
+    "createdAt": "2026-03-01T08:30:00Z"
+  },
+  {
+    "id": "TIC_1002",
+    "title": "Invoice Export Failure",
+    "description": "PDF generation fails when exporting invoices with more than 50 line items.",
+    "customer": "Global Logistics Corp",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-01T10:15:00Z"
+  },
+  {
+    "id": "TIC_1003",
+    "title": "UI Alignment on Mobile",
+    "description": "Navigation bar overlaps with content on iPhone 15 screens.",
+    "customer": "Creative Pulse",
+    "priority": "Medium",
+    "status": "Resolved",
+    "createdAt": "2026-03-01T14:45:00Z"
+  },
+  {
+    "id": "TIC_1004",
+    "title": "Password Reset Link Expired",
+    "description": "Reset links are expiring in 5 minutes instead of the documented 30 minutes.",
+    "customer": "Summit Retail",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-02T09:00:00Z"
+  },
+  {
+    "id": "TIC_1005",
+    "title": "Feature Request: Dark Mode",
+    "description": "Customer is requesting a native dark mode for the web dashboard.",
+    "customer": "Blue Horizon Inc",
+    "priority": "Low",
+    "status": "Backlog",
+    "createdAt": "2026-03-02T11:20:00Z"
+  },
+  {
+    "id": "TIC_1006",
+    "title": "Database Connection Timeout",
+    "description": "Intermittent timeouts occurring during peak hours (14:00 - 16:00 EST).",
+    "customer": "DataStream Ltd",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-03-02T13:10:00Z"
+  },
+  {
+    "id": "TIC_1007",
+    "title": "Typo in API Documentation",
+    "description": "The /v1/users endpoint documentation has a typo in the 'address' parameter.",
+    "customer": "DevFocus",
+    "priority": "Low",
+    "status": "Closed",
+    "createdAt": "2026-03-03T16:05:00Z"
+  },
+  {
+    "id": "TIC_1008",
+    "title": "Billing Query - Refund Request",
+    "description": "Customer was double-charged for the February subscription cycle.",
+    "customer": "Urban Eats",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-03T17:50:00Z"
+  },
+  {
+    "id": "TIC_1009",
+    "title": "Missing Search Results",
+    "description": "Searching for specific tags returns no results even when they exist.",
+    "customer": "Library Central",
+    "priority": "Medium",
+    "status": "In Progress",
+    "createdAt": "2026-03-04T08:15:00Z"
+  },
+  {
+    "id": "TIC_1010",
+    "title": "Integrations Page Loading Slow",
+    "description": "The integrations page takes over 10 seconds to load for accounts with many seats.",
+    "customer": "ScaleUp Agency",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-04T10:40:00Z"
+  },
+  {
+    "id": "TIC_1011",
+    "title": "Account Suspension Appeal",
+    "description": "Account suspended for suspected TOS violation; customer claims it is a mistake.",
+    "customer": "GreenGrove",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-04T12:25:00Z"
+  },
+  {
+    "id": "TIC_1012",
+    "title": "CSV Import Mapping Error",
+    "description": "Date formats are not being parsed correctly during bulk user upload.",
+    "customer": "Vanguard Systems",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-04T14:55:00Z"
+  }
+]
