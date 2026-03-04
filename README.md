@@ -1,16 +1,20 @@
-# React + Vite
+**#Q1: What is JSX, and why is it used?**
+**#A1:** JSX - JavaScript XML হলো জাভাস্ক্রিপ্টের একটি সিনট্যাক্স এক্সটেনশন যা রিঅ্যাক্টে ব্যবহৃত হয়। এটি দেখতে অনেকটা HTML-এর মতো হলেও এটি জাভাস্ক্রিপ্টের ভেতরে UI কেমন হবে তা নির্ধারণ করে।
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**#Q2: What is the difference between State and Props?**
+**#A2:** Props: এটি "Properties"-এর সংক্ষিপ্ত রূপ। এটি প্যারেন্ট কম্পোনেন্ট থেকে চাইল্ড কম্পোনেন্টে ডাটা পাঠানোর জন্য ব্যবহৃত হয় (ফাংশন আর্গুমেন্টের মতো)।
+#State: এটি একটি বিল্ট-ইন অবজেক্ট যা কোনো কম্পোনেন্টের নিজস্ব ডাটা ধরে রাখে যা সময়ের সাথে পরিবর্তিত হতে পারে। স্টেট পরিবর্তন হলে রিঅ্যাক্ট কম্পোনেন্টটিকে পুনরায় রেন্ডার করে।
 
-Currently, two official plugins are available:
+**#Q3: What is the useState hook, and how does it work?**
+**#A3:** useState হুক ফাংশনাল কম্পোনেন্টে স্টেট ব্যবহার করার সুবিধা দেয়। এটি একটি অ্যারে রিটার্ন করে যার দুটি অংশ থাকে: বর্তমান স্টেট এবং সেটি আপডেট করার ফাংশন।
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**#Q4: How can you share state between components in React?**
+**#A4:** রিঅ্যাক্টে ডাটা সাধারণত উপর থেকে নিচের দিকে প্রবাহিত হয়। স্টেট শেয়ার করার উপায়গুলো হলো:
+i. Lifting State Up: স্টেটকে নিকটতম কমন প্যারেন্ট (Parent) কম্পোনেন্টে নিয়ে যাওয়া।
+ii. Context API: গ্লোবাল ডাটা (যেমন থিম বা ইউজার ইনফো) শেয়ার করার জন্য ব্যবহৃত হয়।
+iii. State Management Libraries: বড় অ্যাপ্লিকেশনের জন্য Redux বা Zustand ব্যবহার করা।
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**#Q5: How is event handling done in React?**
+**#A5:** রিঅ্যাক্টে ইভেন্ট হ্যান্ডলিং সাধারণ HTML-এর মতোই, তবে কিছু পার্থক্য আছে:
+i. ইভেন্টের নাম camelCase-এ লিখতে হয় (যেমন: onclick-এর বদলে onClick)।
+ii. ইভেন্ট হ্যান্ডলার হিসেবে সরাসরি একটি ফাংশন পাস করতে হয় (স্ট্রিং নয়)।
