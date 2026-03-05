@@ -15,7 +15,7 @@ const Header = () => {
             href="#"
             className="hover:scale-110 transition-transform duration-300"
           >
-            <span class="text-lg md:text-xl font-bold bg-[linear-gradient(125.04deg,#632EE3_5.68%,#9F62F2_88.38%)] bg-clip-text text-transparent">
+            <span className="text-lg md:text-xl font-bold bg-[linear-gradient(125.04deg,#632EE3_5.68%,#9F62F2_88.38%)] bg-clip-text text-transparent">
               CS - Ticket System
             </span>
           </a>
@@ -74,7 +74,7 @@ const Header = () => {
 
             {/* Button */}
             <div className="">
-              <a class="bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#9F62F2] hover:to-[#632EE3] transition-colors duration-500 text-white px-6 py-3 rounded-sm font-semibold cursor-pointer">
+              <a className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#9F62F2] hover:to-[#632EE3] transition-colors duration-500 text-white px-6 py-3 rounded-sm font-semibold cursor-pointer">
                 <span className="inline-flex items-center justify-center gap-2">
                   <span>
                     <FaPlus />
@@ -148,7 +148,7 @@ const Header = () => {
 
             {/* Button */}
             <div className="text-center my-5 lg:my-0">
-              <a class="bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#9F62F2] hover:to-[#632EE3] transition-colors duration-500 text-white px-6 py-3 rounded-sm font-semibold cursor-pointer">
+              <a className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#9F62F2] hover:to-[#632EE3] transition-colors duration-500 text-white px-6 py-3 rounded-sm font-semibold cursor-pointer">
                 <span className="inline-flex items-center justify-center gap-2">
                   <span>
                     <FaPlus />
