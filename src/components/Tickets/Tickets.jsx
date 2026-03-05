@@ -3,14 +3,13 @@ import Ticket from "../Ticket/Ticket";
 import SelectedTicket from "../SelectedTicket/SelectedTicket";
 
 const Tickets = ({
-  ticketPromise,
+  allTickets,
   handleSelectedTicket,
   selectedTickets,
   handleResolvedTicket,
   resolvedTicketsCount,
 }) => {
-  const ticketData = use(ticketPromise);
-  //   console.log(ticketData);
+  //   console.log(allTickets);
 
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-0 pb-20">
@@ -23,7 +22,7 @@ const Tickets = ({
 
           {/* TicketContainer */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {ticketData.map((ticket) => (
+            {allTickets.map((ticket) => (
               <Ticket
                 key={ticket?.id}
                 ticket={ticket}

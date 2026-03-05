@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
@@ -6,21 +6,21 @@ import Tickets from "./components/Tickets/Tickets";
 import Loader from "./components/Loader/Loader";
 import Swal from "sweetalert2";
 
-// LoadTickets
-const ticketData = async () => {
-  const res = await fetch("/ticketsData.json");
-  return res.json();
-};
-
 const App = () => {
-  // PromiseFromTicketData
-  const ticketPromise = ticketData();
+  // AllTicketsState
+  const [allTickets, setAllTickets] = useState([]);
 
   // SelectedTicketState
   const [selectedTickets, setSelectedTickets] = useState([]);
 
   // ResolvedTicketsState
   const [resolvedTicketsCount, setResolvedTicketsCount] = useState([]);
+
+  useEffect(() => {
+    fetch("/ticketsData.json")
+      .then((res) => res.json())
+      .then((data) => setAllTickets(data));
+  }, []);
 
   // HandleSelectedTicketState
   const handleSelectedTicket = (ticket) => {
@@ -56,6 +56,12 @@ const App = () => {
     );
     setSelectedTickets(remainingTickets);
 
+    // RemoveFromMainTicketsContainer
+    const remainingMainTickets = allTickets.filter(
+      (item) => item.id !== ticket.id,
+    );
+    setAllTickets(remainingMainTickets);
+
     // AddToResolvedTask
     setResolvedTicketsCount([...resolvedTicketsCount, ticket]);
 
@@ -83,7 +89,7 @@ const App = () => {
         {/* TicketSection */}
         <Suspense fallback={<Loader />}>
           <Tickets
-            ticketPromise={ticketPromise}
+            allTickets={allTickets}
             handleSelectedTicket={handleSelectedTicket}
             selectedTickets={selectedTickets}
             handleResolvedTicket={handleResolvedTicket}
