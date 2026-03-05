@@ -1,7 +1,8 @@
 import React, { use } from "react";
 import Ticket from "../Ticket/Ticket";
+import SelectedTicket from "../SelectedTicket/SelectedTicket";
 
-const Tickets = ({ ticketPromise }) => {
+const Tickets = ({ ticketPromise, handleSelectedTicket, selectedTickets }) => {
   const ticketData = use(ticketPromise);
   //   console.log(ticketData);
 
@@ -17,7 +18,11 @@ const Tickets = ({ ticketPromise }) => {
           {/* TicketContainer */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {ticketData.map((ticket) => (
-              <Ticket ticket={ticket} />
+              <Ticket
+                key={ticket?.id}
+                ticket={ticket}
+                handleSelectedTicket={handleSelectedTicket}
+              />
             ))}
           </div>
         </div>
@@ -27,7 +32,23 @@ const Tickets = ({ ticketPromise }) => {
           {/* TaskStatusContainer */}
           <div className="p-4 mb-4">
             <h4 className="text-xl lg:text-2xl font-semibold">Task Status</h4>
-            <p className="mt-2">Nothing found</p>
+
+            {selectedTickets.length === 0 ? (
+              <p className="mt-2 text-gray-400">Nothing found</p>
+            ) : (
+              <p>
+                {/* DynamicTicket */}
+                {selectedTickets.map((selectedTicket, index) => (
+                  <SelectedTicket
+                    key={index}
+                    selectedTicket={selectedTicket}
+                    className="py-1 text-sm font-medium"
+                  >
+                    {selectedTicket.title}
+                  </SelectedTicket>
+                ))}
+              </p>
+            )}
           </div>
 
           {/* ResolvedTask */}

@@ -1,11 +1,11 @@
 import React from "react";
 import { FaCalendar } from "react-icons/fa6";
 
-const Ticket = ({ ticket }) => {
+const Ticket = ({ ticket, handleSelectedTicket }) => {
   const { id, title, description, customer, priority, status, createdAt } =
     ticket;
   return (
-    <section>
+    <section onClick={() => handleSelectedTicket(ticket)}>
       {/* SingleTicket */}
       <div className="bg-white rounded-sm p-4">
         {/* Header */}
