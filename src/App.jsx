@@ -4,7 +4,8 @@ import Footer from "./components/Footer/Footer";
 import Banner from "./components/Banner/Banner";
 import Tickets from "./components/Tickets/Tickets";
 import Loader from "./components/Loader/Loader";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   // AllTicketsState
@@ -31,19 +32,31 @@ const App = () => {
       // alert("Ticket added to Task Status successfully!");
 
       // SweetAlertForAddedTicketToTaskStatus
-      Swal.fire({
-        title: "Ticket added to Task Status successfully!",
-        icon: "success",
-        confirmButtonColor: "#632EE3",
+      // Swal.fire({
+      //   title: "Ticket added to Task Status successfully!",
+      //   icon: "success",
+      //   confirmButtonColor: "#632EE3",
+      // });
+
+      // ReactToastify
+      toast.success("Ticket added to Task Status!", {
+        position: "top-center",
+        autoClose: 2000,
+        theme: "colored",
       });
     } else {
       // alert("This ticket is already added!");
-
       // SweetAlertForWarning
-      Swal.fire({
-        title: "This ticket is already added!",
-        icon: "warning",
-        confirmButtonColor: "#9F62F2",
+      // Swal.fire({
+      //   title: "This ticket is already added!",
+      //   icon: "warning",
+      //   confirmButtonColor: "#9F62F2",
+      // });
+
+      // ReactToastify
+      toast.warn("This ticket is already added!", {
+        position: "top-center",
+        autoClose: 2000,
       });
     }
   };
@@ -66,10 +79,17 @@ const App = () => {
     setResolvedTicketsCount([...resolvedTicketsCount, ticket]);
 
     // SweetAlertForMovedTicketToResolvedTask
-    Swal.fire({
-      title: "Task Resolved!",
-      icon: "success",
-      confirmButtonColor: "#54CF68",
+    // Swal.fire({
+    //   title: "Task Resolved!",
+    //   icon: "success",
+    //   confirmButtonColor: "#54CF68",
+    // });
+
+    // ReactToastify
+    toast.info("Task Resolved successfully!", {
+      position: "top-center",
+      autoClose: 2000,
+      theme: "dark",
     });
   };
 
@@ -100,6 +120,9 @@ const App = () => {
 
       {/* Footer */}
       <Footer />
+
+      {/* ToastContainer */}
+      <ToastContainer />
     </>
   );
 };
