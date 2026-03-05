@@ -5,7 +5,10 @@ const Ticket = ({ ticket, handleSelectedTicket }) => {
   const { id, title, description, customer, priority, status, createdAt } =
     ticket;
   return (
-    <section onClick={() => handleSelectedTicket(ticket)}>
+    <section
+      onClick={() => handleSelectedTicket(ticket)}
+      className="cursor-pointer hover:shadow-xl transition-all duration-300"
+    >
       {/* SingleTicket */}
       <div className="bg-white rounded-sm p-4">
         {/* Header */}

@@ -2,7 +2,7 @@ import React from "react";
 import leftBG from "../../assets/images/bg-left.png";
 import rightBG from "../../assets/images/bg-right.png";
 
-const Banner = () => {
+const Banner = ({ inProgressCount, resolvedTicketsCount }) => {
   return (
     <section className="max-w-7xl mx-auto px-4 lg:px-0 py-5 lg:py-20">
       <div className="flex items-center gap-4">
@@ -15,7 +15,9 @@ const Banner = () => {
           <div className="flex justify-center items-center h-full">
             <div className="text-center text-white">
               <h2 className="text-xl lg:text-2xl">In-Progress</h2>
-              <span className="text-3xl lg:text-6xl font-semibold mt-4">0</span>
+              <span className="text-3xl lg:text-6xl font-semibold mt-4">
+                {inProgressCount}
+              </span>
             </div>
           </div>
         </div>
@@ -29,7 +31,9 @@ const Banner = () => {
           <div className="flex justify-center items-center h-full">
             <div className="text-center text-white">
               <h2 className="text-xl lg:text-2xl">Resolved</h2>
-              <span className="text-3xl lg:text-6xl font-semibold mt-4">0</span>
+              <span className="text-3xl lg:text-6xl font-semibold mt-4">
+                {resolvedTicketsCount}
+              </span>
             </div>
           </div>
         </div>

@@ -2,7 +2,13 @@ import React, { use } from "react";
 import Ticket from "../Ticket/Ticket";
 import SelectedTicket from "../SelectedTicket/SelectedTicket";
 
-const Tickets = ({ ticketPromise, handleSelectedTicket, selectedTickets }) => {
+const Tickets = ({
+  ticketPromise,
+  handleSelectedTicket,
+  selectedTickets,
+  handleResolvedTicket,
+  resolvedTicketsCount,
+}) => {
   const ticketData = use(ticketPromise);
   //   console.log(ticketData);
 
@@ -36,25 +42,36 @@ const Tickets = ({ ticketPromise, handleSelectedTicket, selectedTickets }) => {
             {selectedTickets.length === 0 ? (
               <p className="mt-2 text-gray-400">Nothing found</p>
             ) : (
-              <p>
+              <div>
                 {/* DynamicTicket */}
-                {selectedTickets.map((selectedTicket, index) => (
+                {selectedTickets.map((selectedTicket) => (
                   <SelectedTicket
-                    key={index}
+                    key={selectedTicket?.id}
                     selectedTicket={selectedTicket}
+                    handleResolvedTicket={handleResolvedTicket}
                     className="py-1 text-sm font-medium"
                   >
                     {selectedTicket.title}
                   </SelectedTicket>
                 ))}
-              </p>
+              </div>
             )}
           </div>
 
           {/* ResolvedTask */}
           <div className="p-4">
             <h4 className="text-xl lg:text-2xl font-semibold">Resolved Task</h4>
-            <p className="mt-2">Nothing found</p>
+            {resolvedTicketsCount.length === 0 ? (
+              <p className="mt-2 text-gray-400">Nothing found</p>
+            ) : (
+              <div className="mt-2 space-y-2">
+                {resolvedTicketsCount.map((ticket) => (
+                  <div key={ticket?.id} className="p-2 bg-[#E0E7FF] text-sm">
+                    {ticket.title}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
